@@ -56,7 +56,7 @@ Check for and handle missing values to ensure a clean dataset.
 ```python
 df.shape
 ```
-#Exploratory Data Analysis
+#Exploratory-Data-Analysis
 
 ## Checking for missing values
 Check for and handle missing values to ensure a clean dataset.
