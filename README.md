@@ -56,7 +56,7 @@ Check for and handle missing values to ensure a clean dataset.
 ```python
 df.shape
 ```
-# Data preparation
+#exploratory data analysis eda
 
 ## Checking for missing values
 Check for and handle missing values to ensure a clean dataset.
@@ -92,7 +92,7 @@ df['stroke'].value_counts()
 df.info()
 ```
 
-
+#data preperation
 ## Data Transformation
 
 Convert categorical variables into numerical ones for machine learning models.
