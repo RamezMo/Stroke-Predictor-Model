@@ -10,12 +10,8 @@ In today's healthcare landscape, predictive modeling plays a crucial role in pre
 1. [Introduction](#introduction)
 2. [Data Preparation](#data-preparation)
 3. [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
-4. [Feature Engineering](#feature-engineering)
 5. [Predictive Modeling](#predictive-modeling)
 6. [Model Evaluation](#model-evaluation)
-7. [Actionable Marketing Insights](#actionable-marketing-insights)
-8. [Implementation and Deployment](#implementation-and-deployment)
-9. [Conclusion](#conclusion)
 
 # Data Preparation
 
@@ -36,6 +32,8 @@ from sklearn.ensemble import RandomForestClassifier
 import lazypredict
 from lazypredict.Supervised import LazyClassifier
 from imblearn.over_sampling import SMOTE
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, ConfusionMatrixDisplay
 ```
 
 ## Load dataset using full path
@@ -51,7 +49,7 @@ inspect the first few rows to understand its structure.
 df.head()
 ```
 
-![image]([https://github.com/Hagar-zakaria/Predictive-Analytics-for-Marketing-Expansion-Sales-Forecasting-and-Customer-Segmentation/assets/93611934/ba4ade09-2909-4b12-bf48-071857926230](https://github.com/RamezMo/Stroke-Predictor-Model/assets/142325393/a8d53b28-771e-454a-9506-8dca4a559b97))
+![image](https://github.com/RamezMo/Stroke-Predictor-Model/assets/142325393/ce9231b7-af35-4f5e-b174-fecf6783d475)
 
 
 ## How Many Instances and Features ?
