@@ -10,7 +10,6 @@ In today's healthcare landscape, predictive modeling plays a crucial role in pre
 1. [Introduction](#introduction)
 2. [Data Preparation](#data-preparation)
 3. [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
-5. [Predictive Modeling](#predictive-modeling)
 6. [Model Evaluation](#Evaluate-models)
 
 # Data Preparation
@@ -57,6 +56,7 @@ Check for and handle missing values to ensure a clean dataset.
 ```python
 df.shape
 ```
+# Data preparation
 
 ## Checking for missing values
 Check for and handle missing values to ensure a clean dataset.
@@ -93,7 +93,7 @@ df.info()
 ```
 
 
-# Data Transformation
+## Data Transformation
 
 Convert categorical variables into numerical ones for machine learning models.
 
