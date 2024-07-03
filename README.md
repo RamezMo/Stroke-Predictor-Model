@@ -94,3 +94,84 @@ df['stroke'].value_counts()
 df.info()
 ```
 
+
+# Data Transformation
+
+Convert categorical variables into numerical ones for machine learning models.
+
+```python
+df = pd.get_dummies(df).astype(int)
+```
+
+## Summary statistics
+
+```python
+print(df.describe())
+```
+
+![image](https://github.com/RamezMo/Stroke-Predictor-Model/assets/142325393/9c1634ee-62c9-4b5e-a85e-8ce1fee70ca4)
+
+## Key Observations
+- Age: The average age is 43, first quarter is to age of 25 and maximum age is 82, wide range indicates a diverse base in terms of age.
+- glucose_level: On average, glucose_level about 105 , with most ranging from 55 to 115.
+- Body Mass Index 'bmi': On average, Body Mass Index about 28 , ranging between 10 and 97 with most ranging from 10 to 32.
+
+## Calculate the correlation matrix
+
+```python
+corr=df.corr()
+```
+
+## Create a correlation heatmap for the subset of features
+
+```python
+plt.figure(figsize=(20,20))
+sns.heatmap(corr,annot=True,mask = np.triu(np.ones_like(corr, dtype=bool)))
+```
+![image](https://github.com/RamezMo/Stroke-Predictor-Model/assets/142325393/cb4c0184-4189-4e59-b3bb-9de6fb29041a)
+
+
+## Split data into training and testing sets
+
+```python
+x = df.drop("stroke",axis=1)
+y = df.stroke
+```
+
+## Import SMOTE
+smote is a library used to Handle the imbalanced data by Reducing the size of major class to be as ther minor or by increase the size of minor class
+in our case we will increase the minor class instances
+```python
+from imblearn.over_sampling import SMOTE
+smote = SMOTE(sampling_strategy="minority")
+x_smote , y_smote = smote.fit_resample(x,y)       
+```
+
+## Import LazyPredict
+it is a library that is used to evaluate many algorithms and find the accuracies for each one
+in this case we find that RandomForestClassifier achieves the best accuracy 
+```python
+import lazypredict
+from lazypredict.Supervised import LazyClassifier
+
+clf = LazyClassifier(verbose=0,ignore_warnings=True, custom_metric=None)
+models,predictions = clf.fit(x_train, x_test, y_train, y_test)
+print(models)
+
+```
+
+
+## Evaluate models
+after training the model and predicting it on test data it makes accuracy of nearly 98%
+![image](https://github.com/RamezMo/Stroke-Predictor-Model/assets/142325393/9e02981f-6a88-460b-9098-5b69057aa10d)
+
+##Creating Confusion Matrix
+it shows the predicted values Distribution
+
+```python
+cm = confusion_matrix(y_test, y_pred)
+ConfusionMatrixDisplay(confusion_matrix=cm).plot();
+```
+![image](https://github.com/RamezMo/Stroke-Predictor-Model/assets/142325393/c721c5ea-f45a-4415-8fcb-28747c7a4c35)
+
+
