@@ -8,8 +8,8 @@ In today's healthcare landscape, predictive modeling plays a crucial role in pre
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. [Exploratory Data Analysis (EDA)](#eda)
-3.  [Exploratory Data Analysis (EDA)](#eda) 
+2. [Data Preparation](#Data-Preparation)
+3. [Exploratory Data Analysis (EDA)](#eda) 
 4. [Model Evaluation](#Evaluate-models)
 
 # Data Preparation
