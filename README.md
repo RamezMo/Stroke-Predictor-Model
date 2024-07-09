@@ -1,4 +1,4 @@
-# Stroke-Predictor-Model : Machine Learning Model for Forecasting Stroce with nearly 98% accuracy
+# Stroke-Predictor-Model : Machine Learning Model for Forecasting Stroke with nearly 98% accuracy
 
 ## Introduction
 
